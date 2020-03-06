@@ -1,0 +1,9 @@
+#site-head {
+    display: block;
+    position: sticky;
+    z-index: 1;
+}
+#copy {
+    padding-left: 24em;
+    text-align: center;
+}
