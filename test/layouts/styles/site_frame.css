@@ -1,0 +1,45 @@
+#site_head {
+    display: flex;
+    position: sticky;
+    top: 0; left: 0;
+    font-size: 32px;
+}
+#site_head > * {
+    display: inline-block;
+    padding: 1% 1% 0.5%;
+}
+#site_head > h1 {
+    margin: 0 25%;
+    font-size: 32px;
+}
+.image_button {
+    position: relative;
+    display: inline-block;
+    border-radius: 8px;
+    width: 192px;
+    height: 192px;
+    overflow: hidden;
+}
+.image_button > div[role="img"] {
+    width: 100%;
+    height: 100%;
+}
+
+.image_nav {
+    display: flex;
+    padding: 24px;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+#site_foot {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    display: flex;
+    padding: 0.5% 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+#site_foot > :not(:first-child) { margin-left: 1%; }
