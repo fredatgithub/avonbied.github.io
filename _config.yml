@@ -1,0 +1,12 @@
+title: "Lex von Biedenfeld"
+email: alexvonbiedenfeld@gmail.com
+description: ""
+baseurl: ""
+url: "https://avonbied.github.io"
+
+twitter_username: avonbied
+github_username: avonbied
+
+markdown: kramdown
+
+source: "dist/"
