@@ -37,3 +37,10 @@ function openModal(target) {
     //     caption: "Popeye the Sailorman"
     // };
 }
+
+{
+    success: (data) => {
+        execute
+    },
+    
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Site Head Test</title>
+  <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
+  <link rel="stylesheet" href="../test.css">
+  <style>
+    body {
+      background-color: rgba(27, 26, 25, 1);
+
+    }
+  #site_head {
+    position: sticky;
+    top: 0; left: 0;
+    height: 64px;
+    padding: 0 32px;
+    font-size: 32px;
+    color: hsl(0, 0%, 85%);
+  }
+  #site_head > h1 {
+    display: inline-block;
+    font-size: 32px;
+    padding: 0.35em 16px;
+  }
+  #site_nav {
+    height: 100%;
+  }
+  #site_nav > a {
+    height: 100%;
+    /* color: hsl(0, 0%, 85%); */
+    padding: 0.35em 16px;
+  }
+  #site_nav > a:not(:first-child) {
+    float: right;
+    transition: 1s;
+  }
+  #site_nav > a:not(:first-child) > span {
+    color: hsl(0, 0%, 85%);
+    transition: all 0.51s;
+  }
+  #site_nav > a:not(:first-child):hover > span {
+    color: hsl(0, 0%, 100%);
+    padding-bottom: 2px;
+    border-bottom: 3px solid hsl(0, 0%, 100%);
+    /* text-decoration: underline; */
+  }
+  </style>
+</head>
+<body>
+  <header id="site_head">
+    <nav id="site_nav">
+      <a>Lex von Biedenfeld</a>
+
+      <!-- <a href="#">Home</a> -->
+      <a href="#"><span>Projects</span></a>
+      <a href="#"><span>Contact</span></a>
+      <a href="#"><span>About</span></a>
+    </nav>
+  </header>
+
+</body>
+</html>
