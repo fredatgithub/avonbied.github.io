@@ -13,12 +13,16 @@ defaults: [
     {
       scope: { path: "_pages", type: "pages" },
       values: { layout: "default" }
+    },
+    {
+      scope: { path: "index.html", type: "pages" },
+      values: { layout: "default" }
     }
 ]
 
 markdown: kramdown
 
-source: "src/"
+source: src/
 
 # include: ["_pages"]
 
@@ -28,6 +32,11 @@ liquid:
   strict_variables  : true
 
 permalink: /:year/:month/:title:output_ext
+
+# plugins: [
+#   jekyll-octicons,
+#   jekyll-github-metadata
+# ]
 
 social:
   github: "avonbied"
