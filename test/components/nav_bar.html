@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Navigation Bar</title>
+  <link rel="stylesheet" href="../test.css">
+  <style>
+  .section {
+    background-color: #ffffff;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  #site_head {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    justify-items: flex-start;
+    align-items: center;
+    box-shadow: 0 1px 2px #cdcdcd;
+  }
+  .nav_button, .nav_title {
+    font-size: 24px;
+    padding: 12px 16px 8px;
+    background-color: inherit;
+    transition: all ease-in 100ms;
+  }
+  .nav_button:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: whitesmoke;
+  }
+  #site_nav, .nav_title {
+    display: inline-block;
+  }
+  .nav_title {
+    /* justify-self: flex-end; */
+  }
+  </style>
+</head>
+<body>
+  <header id="site_head" class="section">
+    <h1 class="nav_title" id="site_title">LEX</h1>
+    <nav id="site_nav">
+      <a class="nav_button" href="#">Home
+      </a><a class="nav_button" href="#">About
+      </a><a class="nav_button" href="#">Projects
+      </a><a class="nav_button" href="#">Contact</a>
+    </nav>
+  </header>
+  <div style="background-color:aqua;height:2000px;"></div>
+</body>
+</html>
