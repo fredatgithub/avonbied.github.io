@@ -27,6 +27,51 @@
 #site_nav, .nav_title {
     display: inline-block;
 }
+.card {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    box-shadow: rgba(0, 0, 0, 0.133) 0px 1.6px 3.6px 0px, rgba(0, 0, 0, 0.11) 0px 0.3px 0.9px 0px;
+    border-radius: 4px;
+    transition: box-shadow 0.5s ease 0s;
+    overflow: hidden;
+}
+.card_section {
+    overflow: auto;
+    scrollbar-width: 8px;
+    margin: 0;
+    padding: 8px;
+}
+blockquote {
+    position: relative;
+    padding: 0.5em 20px;
+}
+blockquote::before, blockquote::after {
+    position: absolute;
+    font-size: 2em;
+    /* display: inline; */
+    width: fit-content;
+    margin: 0 0.1em;
+}
+blockquote::before {
+    top: 0.1em;
+    left: 5px;
+    content: open-quote;
+}
+blockquote::after {
+    bottom: 2px;
+    right:5px;
+    content: close-quote;
+}
+.box {
+    background-color: whitesmoke;
+    width: 300px;
+    height: 100px;
+    margin: 30px;
+}
+/*======= END-FINAL =======*/
+
 #banner {
     display: flex;
     padding: 10% 5% 5%;
@@ -57,12 +102,7 @@ h1 {
     background-color: aqua;
 }
 
-body {
-    /* background: rgba(0, 0, 0, 0.3) url('../images/Resized_20200315_175208.jpeg.jpg');
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover; */
-}
+
 
 nav > button {
     font-size: 24px;

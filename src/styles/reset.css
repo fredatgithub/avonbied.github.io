@@ -22,7 +22,7 @@ small { font-size: 0.75rem; }
 
 img { display: inline-block; }
 
-a, img, nav, ol, small, span, ul { margin: 0; display: inline-block; }
+a, blockquote, img, nav, ol, p, small, span, ul { margin: 0; display: inline-block; }
 
 a { text-decoration: none; color: inherit; }
 
