@@ -1,7 +1,9 @@
+baseURL: "https://avonbied.github.io"
+languageCode: "en-us"
+
 title: "Lex von Biedenfeld"
 email: alexvonbiedenfeld@gmail.com
 description: ""
-url: "https://avonbied.github.io"
 
 collections:
   pages:
@@ -21,9 +23,7 @@ defaults: [
 
 markdown: kramdown
 
-source: src/
-
-# include: ["_pages"]
+exclude: ["doc", "test"]
 
 liquid:
   error_mode        : strict
