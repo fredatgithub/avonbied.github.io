@@ -1,4 +1,29 @@
-baseURL: "https://avonbied.github.io"
+# GitHub Defaults (no override)
+lsi: false
+safe: true
+source: ./src
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+plugins:
+  # - jekyll-octicons
+  # GitHub Defaults (no override) 
+  - jekyll-coffeescript
+  - jekyll-default-layout
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-readme-index
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
+
+
 languageCode: "en-us"
 
 title: "Lex von Biedenfeld"
@@ -21,9 +46,7 @@ defaults: [
     }
 ]
 
-markdown: kramdown
-
-exclude: ["doc", "test"]
+# markdown: kramdown
 
 liquid:
   error_mode        : strict
@@ -31,11 +54,6 @@ liquid:
   strict_variables  : true
 
 permalink: /:year/:month/:title:output_ext
-
-# plugins: [
-#   jekyll-octicons,
-#   jekyll-github-metadata
-# ]
 
 social:
   github: "avonbied"
