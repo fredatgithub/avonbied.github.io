@@ -8,5 +8,5 @@ on:
 	workflow_dispatch:
 
 jobs:
-	call-workflow-1-in-local-repo:
+	deploy-nextjs-gh-pages:
 			uses: avonbied/avonbied/.github/workflows/nextjs-gh-pages.yml@main
