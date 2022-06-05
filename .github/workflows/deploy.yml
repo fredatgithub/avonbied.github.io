@@ -1,12 +1,12 @@
 name: CI
 
 on:
-	push:
-		branches: [ "main" ]
-	pull_request:
-		branches: [ "main" ]
-	workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
-	deploy-nextjs-gh-pages:
-			uses: avonbied/avonbied/.github/workflows/nextjs-gh-pages.yml@main
+  deploy-nextjs-gh-pages:
+      uses: avonbied/avonbied/.github/workflows/nextjs-gh-pages.yml@main
