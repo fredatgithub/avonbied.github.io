@@ -9,4 +9,4 @@ jobs:
   deploy-nextjs-gh-pages:
     uses: avonbied/avonbied/.github/workflows/nextjs-gh-pages.yml@main
     with:
-      app_dir: ./src
+      app_dir: src
