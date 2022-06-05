@@ -8,12 +8,10 @@
 	"private": true,
 	"scripts": {
 		"predev": "yarn",
-		"prebuild": "yarn",
-		"prestart": "yarn build",
 		"dev": "next",
 		"build": "next build",
 		"start": "next start",
-		"export": "next build && next export",
+		"export": "next export",
 		"type-check": "tsc"
 	},
 	"dependencies": {
