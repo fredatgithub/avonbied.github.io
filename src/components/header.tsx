@@ -1,20 +1,23 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import styles from './header.module.css';
 
 const nav = [
-	{name: 'Home', url: ''},
-	{name: 'About', url: 'about'},
-	{name: 'Projects', url: 'projects'},
-	{name: 'Contact',	url: 'contact'}
+	{name: 'Home', url: '/'},
+	{name: 'About', url: '/about'},
+	{name: 'Projects', url: '/projects'},
+	{name: 'Contact',	url: '/contact'}
 ];
 
-const Header = () => {
+const Header = (): JSX.Element => {
+	const router = useRouter();
 	return(
-	<header className={styles.site_head}>
-		{/* <h1 className="nav_title" id="site_title">LEX</h1> */}
-		<nav className={styles.site_nav}>
-			{nav.map(link => <Link className={styles.nav_button} href={`/${link.url}`}>{link.name}</Link>)}
+	<header className={styles.siteHead}>
+		<nav className={styles.navBar}>
+			{nav.map((link, id) => <Link id={`${id}`} href={`${link.url}`}>
+				<a className={`${styles.navLink} ${link.url === router.pathname ? styles.active : ''}`}>{link.name}</a>
+			</Link>)}
 		</nav>
 	</header>
 	);

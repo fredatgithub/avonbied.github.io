@@ -3,6 +3,8 @@ import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
 import Layout from '../layouts/default';
+import '../styles/reset.css';
+import '../styles/main.css';
 
 type NextPageWithLayout = NextPage & {
 	getLayout?: (page: ReactElement) => ReactNode;
