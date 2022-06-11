@@ -2,21 +2,14 @@ import Head from 'next/head';
 
 const title = 'Contact Me';
 
-const Page = () => {
-	return(
-		<>
+const Page = (): JSX.Element => {
+	return (<>
 		<Head>
 			<title>{title}</title>
 		</Head>
-    <header id="site_head">
-      <nav>
-        <button><i className="ms-Icon ms-Icon--Back" aria-label="Previous Page"></i>
-        </button><button><i className="ms-Icon ms-Icon--Forward" aria-label="Next Page"></i></button>
-      </nav>
-      <div></div>
-    </header>
-		</>
-	);
+		<header id="site_head">
+		</header>
+	</>);
 };
 
 export default Page;
