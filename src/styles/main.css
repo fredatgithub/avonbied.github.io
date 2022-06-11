@@ -1,3 +1,22 @@
+#__next {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100vh;
+    background: radial-gradient(farthest-corner at 0px 100%, #10115b, transparent, #5b103b),
+        radial-gradient(farthest-corner at 100% 0px, #5b103b, transparent, #10115b),
+        black;
+}
+#__next, #__next * {
+    font-family: sans-serif;
+    color: #fff;
+}
+#__next > main {
+    flex: 1 1 100%;
+    color:#fff;
+}
+#__next > footer {
+    text-align: center;
+}
 .section {
     background-color: #ffffff;
     width: 100%;
@@ -118,7 +137,7 @@ nav > button:hover {
 }
 
 /* #copy { padding-left: 24em; text-align: center; } */
-#site_foot {
+/* #site_foot {
     position: fixed;
     left: 0; bottom: 0;
     width: 100%;
@@ -129,4 +148,4 @@ nav > button:hover {
     justify-content: center; align-items: center;
     font-weight: 600;
 }
-#site_foot > small { margin: 0 1%; }
+#site_foot > small { margin: 0 1%; } */
