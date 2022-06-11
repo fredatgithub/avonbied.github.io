@@ -1,3 +1,4 @@
+<<<<<<<< HEAD:src/assets/main.css
 body {
     display: flex;
     flex-flow: column nowrap;
@@ -300,3 +301,5 @@ nav > button:hover {
     justify-content: center; align-items: center;
     font-weight: 600;
 }
+>>>>>>>> 7157ef2 (Update layouts and styles (#17)):src/styles/main.css
+#site_foot > small { margin: 0 1%; } */
