@@ -1,18 +1,19 @@
 #__next {
     display: flex;
     flex-flow: column nowrap;
-    height: 100vh;
+    min-height: 100vh;
     background: radial-gradient(farthest-corner at 0px 100%, #10115b, transparent, #5b103b),
-        radial-gradient(farthest-corner at 100% 0px, #5b103b, transparent, #10115b),
-        black;
+    radial-gradient(farthest-corner at 100% 0px, #5b103b, transparent, #10115b),
+    black;
 }
 #__next, #__next * {
     font-family: sans-serif;
     color: #fff;
+    overflow-wrap: break-word;
 }
-#__next > main {
-    flex: 1 1 100%;
-    color:#fff;
+#pageContent {
+    position: relative;
+    flex: 1 0 100%;
 }
 #__next > footer {
     text-align: center;

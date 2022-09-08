@@ -7,8 +7,6 @@ const Page = (): JSX.Element => {
 		<Head>
 			<title>{title}</title>
 		</Head>
-		<header id="site_head">
-		</header>
 	</>);
 };
 

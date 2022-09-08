@@ -15,7 +15,7 @@ const Header = (): JSX.Element => {
 	return(
 	<header className={styles.siteHead}>
 		<nav className={styles.navBar}>
-			{nav.map((link, id) => <Link id={`${id}`} href={`${link.url}`}>
+			{nav.map((link, id) => <Link key={`${id}`} href={`${link.url}`}>
 				<a className={`${styles.navLink} ${link.url === router.pathname ? styles.active : ''}`}>{link.name}</a>
 			</Link>)}
 		</nav>
