@@ -1,3 +1,22 @@
+---
+// import styles from './header.module.css';
+
+const navLinks = [
+	{name: 'Home', url: '/'},
+	{name: 'About', url: '/about'},
+	{name: 'Projects', url: '/projects'},
+	{name: 'Contact',	url: '/contact'}
+];
+
+---
+
+<header class='siteHead'>
+	<nav class='navBar'>
+		{navLinks.map(link => <a href={`${link.url}`} class:list={['navLink', (link.url == Astro.url.pathname ? ' active' : '')]}>{link.name}</a>)}
+	</nav>
+</header>
+
+<style>
 .site_head {
     position: sticky;
     top: 0;
@@ -46,3 +65,4 @@
 .navLink:hover, .active {
     background: linear-gradient(transparent 90%, #fff);
 }
+</style>

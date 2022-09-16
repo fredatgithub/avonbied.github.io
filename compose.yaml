@@ -7,7 +7,7 @@ services:
     working_dir: /home/node/app
     volumes:
       - ./app:/home/node/app:rw
-      # - /home/node/app/.next
+      - /home/node/app/node_modules
     ports:
       - 8001:3000
     command: "yarn start"
