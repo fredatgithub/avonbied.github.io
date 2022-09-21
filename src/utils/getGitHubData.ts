@@ -31,7 +31,7 @@ export enum QUERY_NAMES {
 	content = 'content',
 	readme = 'readme',
 }
-const queryGitHubAPI = async (query: QUERY_NAMES, params?: QueryParams) => {
+export const queryGitHubAPI = async (query: QUERY_NAMES, params?: QueryParams) => {
 	return await fetch(`https://api.github.com/${queries[query](params ?? {})}`, {
 		headers: {
 			'Authorization': `bearer ${API_KEY}`,
