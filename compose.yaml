@@ -10,4 +10,4 @@ services:
       - /home/node/app/node_modules
     ports:
       - 8001:3000
-    command: "./start.sh"
+    command: "yarn start"
