@@ -1,0 +1,27 @@
+<<<<<<< HEAD:app/tsconfig.json
+{
+	"extends": "astro/tsconfigs/base",
+	"compilerOptions": {
+		"baseUrl": ".",
+			"paths": {
+			"@components/*": ["src/components/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@assets/*": ["src/assets/*"]
+		},
+		"types": ["astro/client"]
+	}
+=======
+{
+	"extends": "astro/tsconfigs/base",
+	"compilerOptions": {
+		"baseUrl": ".",
+			"paths": {
+			"@components/*": ["src/components/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@assets/*": ["src/assets/*"],
+			"@utils/*": ["src/utils/*"]
+		},
+		"types": ["astro/client"]
+	}
+>>>>>>> e1043cf (Update project structure):tsconfig.json
+}
