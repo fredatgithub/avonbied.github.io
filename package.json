@@ -12,7 +12,6 @@
 		"prestart": "yarn install",
 		"start": "astro dev",
 		"build": "astro check && tsc --noEmit && astro build",
-		"prepreview": "yarn install",
 		"preview": "astro preview"
 	},
 	"dependencies": {
