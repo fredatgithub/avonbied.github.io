@@ -1,4 +1,4 @@
-#__next {
+body {
     display: flex;
     flex-flow: column nowrap;
     min-height: 100vh;
@@ -6,7 +6,7 @@
     radial-gradient(farthest-corner at 100% 0px, #5b103b, transparent, #10115b),
     black;
 }
-#__next, #__next * {
+body, body * {
     font-family: sans-serif;
     color: #fff;
     overflow-wrap: break-word;
@@ -15,7 +15,7 @@
     position: relative;
     flex: 1 0 100%;
 }
-#__next > footer {
+body > footer {
     text-align: center;
 }
 .section {
