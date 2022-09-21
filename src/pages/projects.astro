@@ -4,10 +4,9 @@ import CardSection from '@components/CardSection.astro';
 import { queryGitHubAPI, QUERY_NAMES } from '@utils/getGitHubData';
 
 const title = 'My Projects'
-// const API_KEY = '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';
-// const query = 'users/avonbied/repos';
-const projects = await queryGitHubAPI(QUERY_NAMES.repos);
 
+const projects = await queryGitHubAPI(QUERY_NAMES.repos);
+console.log(projects);
 const projectData = projects.map(({full_name, description}) => ({title: full_name, children: description, size: 'normal'}));
 ---
 
