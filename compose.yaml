@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-services:
-  gh-page:
-    image: node:lts-alpine
-    restart: on-failure
-    environment:
-      - NODE_ENV=production
-    working_dir: /home/node/app
-    volumes:
-      - ./app:/home/node/app:rw
-      - /home/node/app/node_modules
-    ports:
-      - 8001:3000
-    command: "yarn start"
-=======
 services:
   gh-page:
     image: node:lts-alpine
@@ -26,4 +11,3 @@ services:
     ports:
       - 8001:3000
     command: "./start.sh"
->>>>>>> e1043cf (Update project structure)
