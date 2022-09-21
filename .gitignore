@@ -32,5 +32,5 @@ yarn-error.log*
 .env.production.local
 
 # StackBlitz
-.stackblitzrc
+# .stackblitzrc
 sandbox.config.json
