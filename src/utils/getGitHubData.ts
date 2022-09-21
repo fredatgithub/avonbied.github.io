@@ -41,4 +41,20 @@ export const queryGitHubAPI = async (query: QUERY_NAMES, params?: QueryParams) =
 		.catch(e => console.log(e))
 }
 
+const genProject = () => {
+	let res = [];
+	for (let index = 0; index < 15; index++) {
+		res.push({
+			id: index,
+			full_name: `Project-${index+1}`,
+			description: 'This is a random description'
+		})
+	}
+	return res;
+};
+
+export const dummyQueryGitHubAPI = async (query: QUERY_NAMES, params?: QueryParams) => {
+	return genProject();
+}
+
 export default queryGitHubAPI;

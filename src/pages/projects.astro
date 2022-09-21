@@ -1,11 +1,11 @@
 ---
 import CardSection from '@components/CardSection.astro';
 
-import { queryGitHubAPI, QUERY_NAMES } from '@utils/getGitHubData';
+import { dummyQueryGitHubAPI, QUERY_NAMES } from '@utils/getGitHubData';
 
 const title = 'My Projects'
 
-const projects = await queryGitHubAPI(QUERY_NAMES.repos);
+const projects = await dummyQueryGitHubAPI(QUERY_NAMES.repos);
 console.log(projects);
 const projectData = projects.map(({full_name, description}) => ({title: full_name, children: description, size: 'normal'}));
 ---
