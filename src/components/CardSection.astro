@@ -3,14 +3,16 @@ import Card from '@components/Card.astro';
 
 interface Props {
 	title?: string;
-	cardData: {
+	cardData: any[];
+}
+/**
+ *  {
 		title?: string;
 		// style?: CSSProperties;
 		size?: 'small' | 'normal' | 'large';
 		children: string
-	}[];
-}
-
+	}
+ */
 const { title, cardData } = Astro.props;
 ---
 <section>
