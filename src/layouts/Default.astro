@@ -11,6 +11,7 @@ export interface Props {
 
 const { title, description } = Astro.props;
 ---
+
 <BaseLayout title={title} description={description}>
 	<Header />
 	<main id='pageContent'><slot /></main>
