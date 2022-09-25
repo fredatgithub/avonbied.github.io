@@ -10,6 +10,7 @@ const projects = await dummyQueryGitHubAPI(QUERY_NAMES.repos);
 console.log(projects);
 const projectData = projects.map(({full_name, description}) => ({title: full_name, children: description, size: 'normal'}));
 ---
+
 <Layout title={title}>
 	<CardSection title={title} cardData={projectData}/>
 	<p style={{overflowWrap: 'break-word'}}>{`${projects.map(({full_name, html_url, language, topics, description}) => JSON.stringify({full_name, html_url, language, topics, description}))}`}</p>
