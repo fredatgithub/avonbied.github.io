@@ -1,0 +1,68 @@
+---
+export interface Props {
+	image?: string;
+	name?: string;
+	position?: string;
+}
+const { imageName, name = 'Full Name', position = 'Position, Dept.' } = Astro.props;
+
+const SIZES = {
+	small: '24pt',
+	normal: '36pt',
+	large: '48pt',
+}
+
+---
+
+<article class="bioCard" style={{ marginBottom: '16px'}}>
+	{ imageName ? <img class="bioImage" src={`/images/${imageName}`} /> : null }
+	<div class="contentCard">
+		<header class="bioHead">
+			<h2>{name}</h2>
+			<h3>{position}</h3>
+		</header>
+		<div class="bioBody">
+			<slot />
+		</div>
+	</div>
+</article>
+
+<style lang="scss">
+.bioCard {
+	display: block;
+	width: 80ch;
+	padding: 16px 16px;
+	border-radius: 8px;
+	// background-color: rgba(21,21,21,0.7);
+	box-shadow: 0 0 24px #fff;
+}
+.contentCard {
+	padding: 24px 8px;
+	line-height: 124.02%;
+	.bioHead {
+		h2 {
+			font-weight: 700;
+			font-size: 40px;
+		}
+		h3 {
+			font-weight: 500;
+			font-size: 24px;
+			color: #212121;
+		}
+	}
+	.bioBody {
+		font-size: 20px;
+	}
+}
+.bioImage, .contentCard {
+	border-radius: 12px;
+}
+.bioImage {
+	margin-right: 16px;
+}
+.cardContent {
+	padding: 4px 16px;
+	max-height: 24vh;
+	overflow: hidden;
+}
+</style>
