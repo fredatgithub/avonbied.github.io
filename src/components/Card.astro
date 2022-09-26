@@ -4,7 +4,7 @@ export interface Props {
 	// style?: CSSProperties;
 	size?: 'small' | 'normal' | 'large';
 }
-const { title, size } = Astro.props;
+const { title, size = 'normal' } = Astro.props;
 
 const SIZES = {
 	small: '24pt',
@@ -12,6 +12,16 @@ const SIZES = {
 	large: '48pt',
 }
 
+let darkMode = {
+	bgColor: '#000',
+	textColor: '#fff',
+	accentColor: '#d9d9d9'
+};
+let lightMode = {
+	bgColor: '#fff',
+	textColor: '#000',
+	accentColor: '#212121'
+};
 ---
 
 <article class='card' style={{ marginBottom: '16px'}}>
@@ -23,13 +33,13 @@ const SIZES = {
 	</div>
 </article>
 
-<style>
+<style lang="scss" define:vars={darkMode}>
 .card {
 	display: block;
 	width: 80ch;
 	padding: 16px 16px;
 	border-radius: 8px;
-	background-color: rgba(21,21,21,0.7);
+	background-color: fade-out(var(--accentColor), 0.7) //rgba(21,21,21,0.7);
 	box-shadow: 0 0 24px #fff;
 }
 .cardTitle, .cardContent {
