@@ -27,4 +27,4 @@ yarn-error.log*
 
 # StackBlitz
 # .stackblitzrc
-sandbox.config.json
+# sandbox.config.json

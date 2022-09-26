@@ -1,0 +1,10 @@
+# Editor Files
+.vscode/
+.stackblitzrc
+sandbox.config.json
+
+# Supporting Files
+.git/
+.github/
+docs/
+compose.yaml
