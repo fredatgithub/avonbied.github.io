@@ -22,7 +22,8 @@ const { imageName, name = 'Full Name', position = 'Position, Dept.' } = Astro.pr
 
 <style lang="scss">
 .bioCard {
-	display: block;
+	display: flex;
+	flex-flow: row nowrap;
 	width: 80ch;
 	padding: 16px 16px;
 	border-radius: 8px;
@@ -52,6 +53,7 @@ const { imageName, name = 'Full Name', position = 'Position, Dept.' } = Astro.pr
 }
 .bioImage {
 	margin-right: 16px;
+	min-height: 480px;
 }
 .cardContent {
 	padding: 4px 16px;
