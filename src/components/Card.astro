@@ -33,13 +33,13 @@ let lightMode = {
 	</div>
 </article>
 
-<style lang="scss" define:vars={darkMode}>
+<style define:vars={darkMode}>
 .card {
 	display: block;
 	width: 80ch;
 	padding: 16px 16px;
 	border-radius: 8px;
-	background-color: fade-out(var(--accentColor), 0.7) //rgba(21,21,21,0.7);
+	background-color: var(--accentColor); /* rgba(21,21,21,0.7); */
 	box-shadow: 0 0 24px #fff;
 }
 .cardTitle, .cardContent {
