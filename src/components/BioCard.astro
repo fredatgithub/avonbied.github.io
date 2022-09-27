@@ -8,7 +8,7 @@ const { imageName, name = 'Full Name', position = 'Position, Dept.' } = Astro.pr
 ---
 
 <article class="bioCard" style={{ marginBottom: '16px'}}>
-	{ imageName ? <img class="bioImage" src={`/images/${imageName}`} /> : null }
+	{ imageName ? <img class="bioImage" src={`/images/${imageName}`} /> : <div class="bioImage"></div> }
 	<div class="contentCard">
 		<header class="bioHead">
 			<h2>{name}</h2>
