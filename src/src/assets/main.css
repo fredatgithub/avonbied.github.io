@@ -9,7 +9,6 @@ body {
 }
 body, body * {
     font-family: sans-serif;
-    color: #fff;
     overflow-wrap: break-word;
 }
 #pageContent {

@@ -1,5 +1,5 @@
 ---
-// import styles from './header.module.css';
+import Link from '@components/HeaderLink.astro';
 
 const navLinks = [
 	{name: 'Home', url: '/'},
@@ -11,7 +11,7 @@ const navLinks = [
 
 <header class='siteHead'>
 	<nav class='navBar'>
-		{navLinks.map(link => <a href={`${link.url}`} class:list={['navLink', (link.url == Astro.url.pathname ? ' active' : '')]}>{link.name}</a>)}
+		{navLinks.map(link => <Link url={link.url} name={link.name} />)}
 	</nav>
 </header>
 
@@ -51,18 +51,5 @@ const navLinks = [
     padding: 0 8px;
     justify-content: center;
     align-items: stretch;
-}
-.navLink {
-    display: block;
-    flex: 0 0 10ch;
-    font-size: 14pt;
-    text-align: center;
-    text-decoration: none;
-    padding: 1vh;
-    font-weight: bold;
-    transition: all ease-in 100ms;
-}
-.navLink:hover, .active {
-    background: linear-gradient(transparent 90%, #fff);
 }
 </style>
