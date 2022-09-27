@@ -9,7 +9,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "astro dev",
-		"start": "astro dev",
+		"prestart": "astro build",
+		"start": "astro preview",
 		"build": "astro check && tsc --noEmit && astro build",
 		"preview": "astro preview"
 	},

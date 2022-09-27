@@ -1,9 +1,9 @@
 services:
   gh-page:
-    build: .
+    build: ./app
     restart: on-failure
     volumes:
-      - .:/home/node/app:rw
+      - ./app:/home/node/app:rw
     ports:
       - 8001:3000
     command: yarn start
