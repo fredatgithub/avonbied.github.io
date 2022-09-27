@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://avonbied.github.io',
 	integrations: [sitemap()],
+	srcDir: './app',
 	server: {
 		host: true
 	}
