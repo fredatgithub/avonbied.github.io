@@ -1,0 +1,24 @@
+---
+export interface Props {
+	name?: string;
+	url?: string;
+}
+const { name, url } = Astro.props;
+---
+<a href={url} class:list={['navLink', (url == Astro.url.pathname ? ' active' : '')]}>{name}</a>
+
+<style>
+.navLink {
+    display: block;
+    flex: 0 0 10ch;
+    font-size: 14pt;
+    text-align: center;
+    text-decoration: none;
+    padding: 1vh;
+    font-weight: bold;
+    transition: all ease-in 100ms;
+}
+.navLink:hover, .active {
+    background: linear-gradient(transparent 90%, #fff);
+}
+</style>
