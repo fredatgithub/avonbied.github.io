@@ -1,13 +1,9 @@
 services:
   gh-page:
-    image: node:lts-alpine
+    build: .
     restart: on-failure
-    environment:
-      - NODE_ENV=production
-    working_dir: /home/node/app
     volumes:
       - .:/home/node/app:rw
-      - /home/node/app/node_modules
     ports:
       - 8001:3000
-    command: "yarn start"
+    command: yarn start
