@@ -1,9 +1,33 @@
 services:
   gh-page:
-    build: ./app
+    image: node:lts-alpine
     restart: on-failure
+    networks:
+      - frontend
+    working_dir: /home/node/app
     volumes:
       - ./app:/home/node/app:rw
+    command: "yarn run start"
+
+  runtime:
+    image: nginx:alpine-slim
+    networks:
+      - frontend
+    volumes:
+      - ./server/default.conf:/etc/nginx/conf.d/default.conf:rw
     ports:
-      - 8001:3000
-    command: yarn start
+      - 8080:80
+    depends_on:
+      - gh-page
+
+networks:
+  frontend:
+# FROM node:lts-alpine AS build
+# WORKDIR /app
+# COPY . .
+# RUN yarn install
+# RUN yarn run build
+
+# FROM httpd:alpine AS runtime
+# COPY --from=build /app/dist /usr/local/apache2/htdocs/
+# EXPOSE 80
