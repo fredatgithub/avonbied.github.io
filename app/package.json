@@ -9,17 +9,18 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "astro dev",
-		"prestart": "astro build",
+		"prestart": "yarn install && yarn build",
 		"start": "astro preview",
 		"build": "astro check && tsc --noEmit && astro build",
-		"preview": "astro preview"
+		"preview": "astro preview",
+		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/sitemap": "^1.0.0",
-		"astro": "^1.2.8"
+		"@astrojs/sitemap": "^1.2.1",
+		"astro": "^2.1.3"
 	},
 	"devDependencies": {
-		"@types/node": "^18.7.18",
-		"sass": "^1.55.0"
+		"@types/node": "^18.15.10",
+		"sass": "^1.60.0"
 	}
 }

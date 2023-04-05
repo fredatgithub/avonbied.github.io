@@ -1,5 +1,4 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '@utils/config';
 import '@assets/reset.css';
 import '@assets/main.css';
 
@@ -9,7 +8,10 @@ export interface Props {
 	image?: string;
 }
 
-const { title, description = SITE_DESCRIPTION } = Astro.props;
+const {
+	title = 'Lex von Biedenfeld',
+	description = 'The personal site of Lex von Biedenfeld!'
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ const { title, description = SITE_DESCRIPTION } = Astro.props;
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<!-- Primary Meta Tags -->
-	<title>{SITE_TITLE}{title ? ` | ${title}`: ''}</title>
+	<title>{title}</title>
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
 	<!-- Open Graph / Facebook -->
@@ -28,6 +30,7 @@ const { title, description = SITE_DESCRIPTION } = Astro.props;
 	<meta property="og:url" content={Astro.url} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
+	<meta name="generator" content={Astro.generator} />
 </head>
 <body>
 	<slot/>

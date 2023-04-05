@@ -8,5 +8,8 @@ sandbox.config.json
 .github/
 docs/
 compose.yaml
+test/
+docs/
+temp/
 
 node_modules
