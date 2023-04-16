@@ -29,10 +29,22 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 footer {
 	background-color: #171718;
 	color: #fff;
+	padding: 0 64px;
+	section {
+		padding: 8px;
+	}
 	.socials {
 		display: flex;
-		justify-items: center;
+		justify-content: center;
 		gap: 16px;
+	}
+}
+@media (min-width: 50em) {
+	footer {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
 	}
 }
 </style>
