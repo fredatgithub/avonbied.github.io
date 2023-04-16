@@ -10,7 +10,7 @@
  * 6. Replace any `fill="#000000"` attributes with `stroke="none"`
  *    (or add `stroke="none"` on shapes with no `fill` or `stroke` specified).
  */
-const ICON_PATH = '/assets/images/vendor';
+const ICON_PATH = '/assets/vendor';
 const completePath = (itemName) => {
 	return `${ICON_PATH}/${itemName}.svg`;
 };
