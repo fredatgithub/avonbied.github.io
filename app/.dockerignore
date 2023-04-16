@@ -6,10 +6,21 @@ sandbox.config.json
 # Supporting Files
 .git/
 .github/
-docs/
+.gitignore
+
+.dockerignore
+Dockerfile*
+docker-compose*
 compose.yaml
+
+dist/
+node_modules
+npm-debug.log
+README.md
+LICENSE
+
+# Working Files
+docs/
 test/
 docs/
 temp/
-
-node_modules
