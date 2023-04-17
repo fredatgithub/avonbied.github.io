@@ -42,8 +42,12 @@ const {
 </body>
 </html>
 
-<style lang="scss">
-*:global() {
+<style lang="scss" is:global>
+body, body * {
 	color: #fff;
+}
+#pageContent {
+	display: flex;
+	flex-flow: column;
 }
 </style>
