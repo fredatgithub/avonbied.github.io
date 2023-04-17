@@ -10,7 +10,7 @@
  * 6. Replace any `fill="#000000"` attributes with `stroke="none"`
  *    (or add `stroke="none"` on shapes with no `fill` or `stroke` specified).
  */
-const ICON_PATH = '/assets/images/vendor';
+const ICON_PATH = '/assets/vendor';
 const completePath = (itemName) => {
 	return `${ICON_PATH}/${itemName}.svg`;
 };
@@ -26,7 +26,10 @@ export const iconPaths: {
 	linkedin: { src: `${completePath('logo-linkedin')}` },
 	twitter: { src: `${completePath('logo-twitter')}` },
 	// ICONS
+	'arrow-right': { src: `${completePath('icon-arrowright')}` },
+	checklist: { src: `${completePath('icon-checklist')}` },
 	circuitry: { src: `${completePath('icon-circuitry')}` },
+	'cloud-upload': { src: `${completePath('icon-cloudupload')}` },
 	code: { src: `${completePath('icon-code')}` },
 	graph: { src: `${completePath('icon-graph')}` },
 	terminal: { src: `${completePath('icon-terminal')}` },

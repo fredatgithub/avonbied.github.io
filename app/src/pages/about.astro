@@ -1,18 +1,71 @@
 ---
-import Layout from "@layouts/Default.astro";
-import Timeline from '@components/timeline/Double.astro';
+import Layout from '@layouts/Default.astro';
+import Hero from '@components/Hero.astro';
+import SkillCard from '@components/SkillCard.astro';
 
 const title = 'About Me';
 
-const items = () => {
-	let arr = [];
-	for (let i = 0; i < 5; i++) {
-		arr.push({ title: `test-${i}`, content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia modi nemo ab labore, magnam cumque nisi vel minus. Vitae earum doloremque excepturi cum fuga a magni deserunt perferendis quos molestiae. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia modi nemo ab labore, magnam cumque nisi vel minus. Vitae earum doloremque excepturi cum fuga a magni deserunt perferendis quos molestiae. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia modi nemo ab labore, magnam cumque nisi vel minus. Vitae earum doloremque excepturi cum fuga a magni deserunt perferendis quos molestiae.' });
-	}
-	return arr;
-};
----
+const skills = [
+	{ title: 'Business Development', description: 'Corporis voluptates tenetur laudantium.', icon: 'checklist' },
+	{ title: 'Migration Assessment', description: 'Corporis voluptates tenetur laudantium.', icon: 'cloud-upload' },
+	{ title: 'Cloud Development', description: 'Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium.', icon: 'terminal' },
+	{ title: 'Infrastructure Automation', description: 'Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium.', icon: 'terminal' },
+	{ title: 'Infrastructure Automation', description: 'Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium.', icon: 'terminal' },
+	{ title: 'Infrastructure Automation', description: 'Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium. Corporis voluptates tenetur laudantium.', icon: 'terminal' },
+]
 
+---
+ 
 <Layout title={title}>
-	<Timeline items={items()} />
+	<Hero
+		title="About"
+		tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+	>
+		<img
+			src="/assets/at-work.jpg"
+			alt="Jeanine White at work with a colleague"
+		/>
+	</Hero>
+
+	<section>
+		<h2 class="section-title">Background</h2>
+		<div class="content">
+			<p>Hi there! I'm a Houston-based consultant at Accenture and I have a passion for helping clients transform their businesses with the power of cloud computing.
+				Whether it's AWS, Azure, Google Cloud, or any other platform, I have the skills and experience to design, implement, and optimize cloud solutions that meet the needs of clients.</p>
+
+			<p>I believe that cloud computing is not only a technological trend, but also a strategic advantage that can enhance security, reduce costs, and enable innovation.
+				That's why I aspire to leverage cloud offerings to increase the security, cost-effectiveness, and fluidity of business processes. If you're looking for a cloud expert who can deliver results with enthusiasm and professionalism, look no further than me!</p>
+		</div>
+	</section>
+	<section>
+		<h2 class="section-title">Education</h2>
+		<div class="content">
+			<p>Corporis voluptates tenetur laudantium.</p>
+		</div>
+	</section>
+	<section>
+		<h2 class="section-title">Skills</h2>
+		<div class="skills-list">
+			{skills.map(({title, description, icon}) => <SkillCard title={title} description={description} icon={icon}/>)}
+		</div>
+	</section>
 </Layout>
+
+<style>
+section {
+	padding: 8px;
+}
+.skills-list {
+	display: flex;
+	flex-flow: column wrap;
+	gap: 3rem;
+	color: #fff;
+}
+@media (min-width: 50rem) {
+	.skills-list {
+		gap: 2rem;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+}
+</style>

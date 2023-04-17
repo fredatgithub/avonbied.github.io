@@ -1,13 +1,16 @@
 services:
   gh-page:
-    image: node:lts-alpine
+    build: 
+      context: ./app
+      args:
+        NODE_ENV: development
     restart: on-failure
     networks:
       - frontend
-    working_dir: /home/node/app
     volumes:
       - ./app:/home/node/app:rw
-    command: "yarn run start"
+      - /home/node/app/node_modules
+      - /home/node/app/.astro
 
   runtime:
     image: nginx:alpine-slim

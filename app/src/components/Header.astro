@@ -3,13 +3,16 @@ import Link from '@components/HeaderLink.astro';
 
 const navLinks = [
 	{name: 'Home', url: '/'},
-	{name: 'About', url: '/about'},
-	// {name: 'Projects', url: '/projects'},
-	{name: 'Contact',	url: '/contact'}
+	{name: 'About Me', url: '/about'},
+	{name: 'My Story', url: '/story'},
+	{name: 'Contact Me', url: '/contact'}
 ];
+
+// const pages = await Astro.glob('../pages/*.astro');
+// pages.forEach(p => console.log(`${p.file}: ${p.url}`));
 ---
 
-<header class='siteHead'>
+<header>
 	<nav class='navBar'>
 		{navLinks.map(link => <Link url={link.url} name={link.name} />)}
 	</nav>
@@ -17,39 +20,39 @@ const navLinks = [
 
 <style>
 .site_head {
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    justify-items: flex-start;
-    align-items: center;
-    /* padding: 0 12px; */
-    box-shadow: 0 1px 2px #cdcdcd;
+	position: sticky;
+	top: 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	justify-items: flex-start;
+	align-items: center;
+	/* padding: 0 12px; */
+	box-shadow: 0 1px 2px #cdcdcd;
 }
 .nav_button, .nav_title {
-    font-size: 24px;
-    padding: 12px 24px 8px;
-    background-color: inherit;
-    transition: all ease-in 100ms;
+	font-size: 24px;
+	padding: 12px 24px 8px;
+	background-color: inherit;
+	transition: all ease-in 100ms;
 }
-.siteHead {
-    /* position: sticky;
-    top: 0; */
-    /* display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between; */
-    /* justify-items: flex-start; */
-    /* align-items: center; */
-    padding: 0 12px;
-    background-color: #000;
-    /* box-shadow: 0 1px 2px #cdcdcd; */
+header {
+	/* position: sticky;
+	top: 0; */
+	/* display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between; */
+	/* justify-items: flex-start; */
+	/* align-items: center; */
+	padding: 0 12px;
+	background-color: #000;
+	/* box-shadow: 0 1px 2px #cdcdcd; */
 }
 .navBar {
-    display: flex;
-    font: 1em sans-serif;
-    padding: 0 8px;
-    justify-content: center;
-    align-items: stretch;
+	display: flex;
+	font: 1em sans-serif;
+	padding: 0 8px;
+	justify-content: center;
+	align-items: stretch;
 }
 </style>

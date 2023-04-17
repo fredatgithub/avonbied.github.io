@@ -24,7 +24,7 @@ let lightMode = {
 };
 ---
 
-<article class='card' style={{ marginBottom: '16px'}}>
+<article>
 	{title ? <header>
 		<h3 class='cardTitle' style={{ fontSize: SIZES[size] }} ><span>{title ?? 'This is a Test Title'}</span></h3>
 	</header> : null}
@@ -33,29 +33,30 @@ let lightMode = {
 	</div>
 </article>
 
-<style>
-.card {
+<style lang="scss">
+article {
 	display: block;
 	width: 80ch;
 	padding: 16px 16px;
+	margin-bottom: 16px;
 	border-radius: 8px;
 	background-color: rgba(21,21,21,0.7);
 	/* box-shadow: 0 0 24px #fff; */
 	color: #fff;
+	.cardTitle {
+		padding: 4px 16px;
+		font-size: 48pt;
+		span {
+			border-bottom: 1px solid #fff;
+		}
+	}
+	.cardContent {
+		padding: 4px 16px;
+		max-height: 24vh;
+		overflow: hidden;
+	}
 }
 .cardTitle, .cardContent {
 	padding: 4px 16px;
-}
-.cardTitle {
-	padding: 4px 16px;
-	font-size: 48pt;
-}
-.cardTitle > span {
-	border-bottom: 1px solid #fff;
-}
-.cardContent {
-	padding: 4px 16px;
-	max-height: 24vh;
-	overflow: hidden;
 }
 </style>
