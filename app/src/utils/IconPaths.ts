@@ -26,7 +26,10 @@ export const iconPaths: {
 	linkedin: { src: `${completePath('logo-linkedin')}` },
 	twitter: { src: `${completePath('logo-twitter')}` },
 	// ICONS
+	'arrow-right': { src: `${completePath('icon-arrowright')}` },
+	checklist: { src: `${completePath('icon-checklist')}` },
 	circuitry: { src: `${completePath('icon-circuitry')}` },
+	'cloud-upload': { src: `${completePath('icon-cloudupload')}` },
 	code: { src: `${completePath('icon-code')}` },
 	graph: { src: `${completePath('icon-graph')}` },
 	terminal: { src: `${completePath('icon-terminal')}` },
