@@ -13,6 +13,7 @@ const { title, href } = Astro.props;
 </aside>
 
 <style lang="scss">
+$accentColor: #589597;
 aside {
 	display: flex;
 	flex-flow: column nowrap;
@@ -36,9 +37,9 @@ aside {
 		line-height: 1.1;
 		overflow: hidden;
 		white-space: nowrap;
-		background-color: #589597;
+		background-color: $accentColor;
 		&:focus, &:hover {
-			background-color: #589597ac;
+			background-color: #{$accentColor}ac;
 			text-decoration: 1px solid white underline;
 		}
 	}
