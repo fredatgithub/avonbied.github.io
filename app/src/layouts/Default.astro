@@ -37,7 +37,7 @@ const {
 </head>
 <body>
  	<Header />
- 	<main id='pageContent'><slot /></main>
+ 	<main id='page-content'><slot /></main>
  	<Footer />
 </body>
 </html>
@@ -46,8 +46,9 @@ const {
 body, body * {
 	color: #fff;
 }
-#pageContent {
+#page-content {
 	display: flex;
 	flex-flow: column;
+	flex: 1 0 100%;
 }
 </style>
