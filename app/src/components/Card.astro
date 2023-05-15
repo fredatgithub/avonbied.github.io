@@ -1,62 +1,84 @@
 ---
 export interface Props {
-	title?: string;
-	// style?: CSSProperties;
-	size?: 'small' | 'normal' | 'large';
+	title: string;
+	subtitle?: string;
+	image?: string;
+	isVertical?: boolean;
 }
-const { title, size = 'normal' } = Astro.props;
+const {
+	title, subtitle, image, isVertical = false
+} = Astro.props;
 
 const SIZES = {
-	small: '24pt',
-	normal: '36pt',
-	large: '48pt',
-}
-
-let darkMode = {
-	bgColor: '#000',
-	textColor: '#fff',
-	accentColor: '#d9d9d9'
-};
-let lightMode = {
-	bgColor: '#fff',
-	textColor: '#000',
-	accentColor: '#212121'
+	xsmall: "16pt",
+	small: "24pt",
+	normal: "36pt",
+	large: "48pt",
 };
 ---
 
-<article>
-	{title ? <header>
-		<h3 class='cardTitle' style={{ fontSize: SIZES[size] }} ><span>{title ?? 'This is a Test Title'}</span></h3>
-	</header> : null}
-	<div class='cardContent'>
-		<slot />
+<article class:list={[{ vertical: isVertical }]}>
+	<div class="image-box">
+		{image && <img src={image} alt="" />}
+	</div>
+	<div class="card-content">
+		<header class="card-header">
+			<h3 style={{fontSize: SIZES['normal']}}>{title ?? "Title Placeholder"}</h3>
+			{subtitle && <h4 style={{fontSize: SIZES['xsmall']}}>{subtitle}</h4>}
+		</header>
+		<div>
+			<slot />
+		</div>
 	</div>
 </article>
 
 <style lang="scss">
+$cardHeight: 450px;
 article {
-	display: block;
-	width: 80ch;
-	padding: 16px 16px;
-	margin-bottom: 16px;
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 0;
+	background: #fff;
 	border-radius: 8px;
-	background-color: rgba(21,21,21,0.7);
-	/* box-shadow: 0 0 24px #fff; */
-	color: #fff;
-	.cardTitle {
-		padding: 4px 16px;
-		font-size: 48pt;
-		span {
-			border-bottom: 1px solid #fff;
+	overflow: hidden;
+	min-width: 50ch;
+	max-width: 100ch;
+	align-items: stretch;
+	.image-box {
+		display: flex;
+		align-items: center;
+		img {
+			max-height: $cardHeight;
+			max-width: $cardHeight;
 		}
 	}
-	.cardContent {
-		padding: 4px 16px;
-		max-height: 24vh;
-		overflow: hidden;
+	.card-content {
+		display: flex;
+		flex-flow: column nowrap;
+		:global(*) {
+			color: #000;
+		}
+		.card-header {
+			display: flex;
+			flex-flow: column;
+			background-color: #dddddd;
+			padding: 16px 16px 4px;
+			flex: 1 1 100%;
+			justify-content: center;
+		}
+		div {
+			padding: 4px 16px 16px;
+			flex: 1 1 100%;
+		}
 	}
-}
-.cardTitle, .cardContent {
-	padding: 4px 16px;
+	&.vertical {
+		flex-flow: column;
+		.card-header {
+			text-align: center;
+			h3 {
+				order: 2;
+			}
+		}
+	}
 }
 </style>
