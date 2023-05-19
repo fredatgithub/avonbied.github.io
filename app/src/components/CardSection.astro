@@ -19,7 +19,7 @@ const { title, cardData } = Astro.props;
 <section>
 	{title ? <h2 style='font-size:32pt;'>{title}</h2> : ''}
 	<div style={{display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-around', paddingTop: '16px'}}>
-		{cardData.map(c => <Card title={c.title} size={c.size}>{c.children}</Card>)}
+		{cardData.map(c => <Card title={c.title}>{c.children}</Card>)}
 	</div>
 </section>
 

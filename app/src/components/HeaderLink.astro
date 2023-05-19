@@ -5,9 +5,9 @@ export interface Props {
 }
 const { name, url } = Astro.props;
 ---
-<a href={url} class:list={['navLink', (url == Astro.url.pathname ? ' active' : '')]}>{name}</a>
+<a href={url} class:list={['navLink', {active: url === Astro.url.pathname}]}>{name}</a>
 
-<style>
+<style lang="scss">
 .navLink {
 	display: block;
 	flex: 0 0 12ch;
@@ -18,8 +18,8 @@ const { name, url } = Astro.props;
 	font-weight: bold;
 	transition: all ease-in 100ms;
 	color: #fff;
-}
-.navLink:hover, .active {
-	background: linear-gradient(transparent 90%, #fff);
+	&:hover, &.active {
+		background: linear-gradient(transparent 90%, #fff);
+	}
 }
 </style>
