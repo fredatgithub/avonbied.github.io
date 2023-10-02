@@ -11,10 +11,11 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	{ label: 'Dev.To', href: `https://dev.to/${userName}`, icon: 'devto' },
 	{ label: 'Twitter', href: `https://twitter.com/${userName}`, icon: 'twitter' },
 ];
+const TODAY = new Date(Date.now());
 ---
 <footer>
 	<section>
-		<small>&copy; {currentYear} Lex von Biedenfeld</small> | <small>Last updated <time datetime="2023-04-05">April 5, 2023</time></small>
+		<small>&copy; {currentYear} Lex von Biedenfeld</small> | <small>Last updated <time datetime={`${TODAY.getUTCFullYear()}-${TODAY.getUTCMonth()+1}-${TODAY.getUTCDay()+1}`}>{TODAY.toLocaleDateString('en',{year:'numeric',month:'short',day:'numeric'})}</time></small>
 	</section>
 	<section class="socials">
 		{iconLinks.map(({ href, icon, label }) => (

@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Default.astro';
 
+import Hero from '@components/Hero.astro';
 import Card from '@components/Card.astro';
 import CTA from '@components/CTA.astro';
 import Icon from '@components/Icon.astro';
@@ -10,6 +11,10 @@ const title = 'Home';
 
 <Layout title={title}>
 	<section style={{ paddingTop: '2rem' }}>
+		<Hero title="About"
+		tagline="Thanks for stopping by. Read below if you want to learn more about myself and my background.">
+		<img src="/assets/at-work.jpg" alt="" />
+	</Hero>
 		<Card title="Lex von Biedenfeld" subtitle="Sr. Cloud Architect" image="/images/test-avatar1.jpg">
 			<p>Hi there! I'm a Houston-based consultant at Accenture and I have a passion for helping clients transform their businesses with the power of cloud computing.
 				Whether it's AWS, Azure, Google Cloud, or any other platform, I have the skills and experience to design, implement, and optimize cloud solutions that meet the needs of clients.</p><br/>
