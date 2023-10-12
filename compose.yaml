@@ -1,13 +1,15 @@
+name: avonbied-ghpage
 services:
-  gh-page:
+  site:
     build: 
-      context: ./app
-      args:
-        NODE_ENV: development
+      context: app
     restart: on-failure
     ports:
       - 9001:3000
-    volumes:
-      - ./app:/home/node/app:rw
-      - /home/node/app/node_modules
-      - /home/node/app/.astro
+    develop:
+      watch:
+        - path: app/package.json
+          action: rebuild
+        - path: app/
+          action: sync
+          target: /home/node/app

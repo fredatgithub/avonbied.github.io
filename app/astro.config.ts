@@ -5,8 +5,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://avonbied.github.io',
 	integrations: [sitemap()],
-	port: (process.env.PORT ?? 8080),
 	server: {
+		port: (+process.env.PORT ?? 8080),
 		host: true,
 	},
 	vite: {

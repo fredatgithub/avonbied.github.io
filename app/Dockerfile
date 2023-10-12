@@ -7,17 +7,16 @@ ENV NODE_ENV ${ENV}
 ARG PORT=3000
 ENV PORT ${PORT}
 
+ENV YARN_CACHE_FOLDER=/cache/yarn
 WORKDIR /home/node/app
 
-COPY package*.json ./
-
-RUN if [ "$NODE_ENV" = "development" ]; \
-		then yarn install; \
-		else yarn install --frozen-lockfile --production; \
-	fi
+# Install packages
+COPY package*.json yarn.lock ./
+RUN --mount=type=cache,target=/cache/yarn \
+  yarn install
 
 COPY . .
 
 EXPOSE ${PORT}
 
-CMD yarn "$(if [ $NODE_ENV = 'production' ] ; then echo 'start' ; else echo 'dev'; fi)"
+CMD ["yarn", "start"]
