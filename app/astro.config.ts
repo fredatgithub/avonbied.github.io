@@ -6,7 +6,7 @@ export default defineConfig({
 	site: 'https://avonbied.github.io',
 	integrations: [sitemap()],
 	server: {
-		port: (+process.env.PORT ?? 8080),
+		port: Number(process.env.PORT ?? 8080),
 		host: true,
 	},
 	vite: {
