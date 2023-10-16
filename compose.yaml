@@ -1,8 +1,7 @@
 name: avonbied-ghpage
 services:
   site:
-    build: 
-      context: app
+    build: app
     restart: on-failure
     ports:
       - 9001:3000

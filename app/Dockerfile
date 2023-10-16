@@ -1,9 +1,6 @@
 # syntax=docker/dockerfile:1
 FROM node:lts-alpine
 
-ARG NODE_ENV=development
-ENV NODE_ENV ${ENV}
-
 ARG PORT=3000
 ENV PORT ${PORT}
 
