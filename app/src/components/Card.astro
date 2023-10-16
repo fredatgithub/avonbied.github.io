@@ -8,23 +8,14 @@ export interface Props {
 const {
 	title, subtitle, image, isVertical = false
 } = Astro.props;
-
-const SIZES = {
-	xsmall: "16pt",
-	small: "24pt",
-	normal: "36pt",
-	large: "48pt",
-};
 ---
 
 <article class:list={[{ vertical: isVertical }]}>
-	<div class="image-box">
-		{image && <img src={image} alt="" />}
-	</div>
+	{image && <img src={image} alt="" />}
 	<div class="card-content">
 		<header class="card-header">
-			<h3 style={{fontSize: SIZES['normal']}}>{title ?? "Title Placeholder"}</h3>
-			{subtitle && <h4 style={{fontSize: SIZES['xsmall']}}>{subtitle}</h4>}
+			<h3>{title ?? "Title Placeholder"}</h3>
+			{subtitle && <h4>{subtitle}</h4>}
 		</header>
 		<div>
 			<slot />
@@ -33,24 +24,19 @@ const SIZES = {
 </article>
 
 <style lang="scss">
-$cardHeight: 450px;
+$imageWidth: 400px;
+$imageHeight: 400px;
 article {
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: column nowrap;
 	padding: 0;
+	max-width: $imageWidth;
 	background: #fff;
 	border-radius: 8px;
 	overflow: hidden;
-	min-width: 50ch;
-	max-width: 100ch;
-	align-items: stretch;
-	.image-box {
-		display: flex;
-		align-items: center;
-		img {
-			max-height: $cardHeight;
-			max-width: $cardHeight;
-		}
+	img {
+		height: $imageHeight;
+		width: $imageWidth;
 	}
 	.card-content {
 		display: flex;
@@ -62,12 +48,14 @@ article {
 			display: flex;
 			flex-flow: column;
 			background-color: #dddddd;
-			padding: 16px 16px 4px;
-			flex: 1 1 100%;
+			padding: 16px 16px 6px;
+			line-height: 1.1;
 			justify-content: center;
+			h3 { font-size: 24pt; }
+			h4 { font-size: 16pt; }
 		}
 		div {
-			padding: 4px 16px 16px;
+			padding: 6px 16px 8px;
 			flex: 1 1 100%;
 		}
 	}
@@ -78,6 +66,20 @@ article {
 			h3 {
 				order: 2;
 			}
+		}
+	}
+}
+@media only screen and (min-width: 60em) {
+	article {
+		flex-flow: row;
+		max-height: ($imageHeight * 1.25);
+		max-width: 110ch;
+		img {
+			width: ($imageWidth * 1.25);
+			height: ($imageHeight * 1.25);
+		}
+		.card-header {
+			h3 { font-size: 36pt; }
 		}
 	}
 }
