@@ -16,11 +16,13 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@astrojs/sitemap": "^1.2.2",
-		"astro": "^2.3.0"
+		"@astrojs/sitemap": "^3.0.3",
+		"astro": "^3.4.3"
 	},
 	"devDependencies": {
-		"@types/node": "^18.15.10",
-		"sass": "^1.60.0"
+		"@astrojs/check": "^0.3.1",
+		"@types/node": "^20.8.10",
+		"sass": "^1.69.5",
+		"typescript": "^5.2.2"
 	}
 }

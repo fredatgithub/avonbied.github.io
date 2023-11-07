@@ -8,9 +8,10 @@ import Icon from '@components/Icon.astro';
 
 const title = 'Home';
 
-const USER_AVATAR = await fetch('https://api.github.com/users/avonbied')
-	.then(response => response.json())
-	.then(json => json.avatar_url)
+const USER_AVATAR = 'https://avatars.githubusercontent.com/u/58815784?v=4';
+// await fetch('https://api.github.com/users/avonbied')
+// 	.then(response => response.json())
+// 	.then(json => json.avatar_url)
 ---
 
 <Layout title={title}>
